@@ -1,1 +1,1 @@
-#include<stdio.h>
+i += max

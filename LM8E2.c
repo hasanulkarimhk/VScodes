@@ -16,7 +16,7 @@ void main()
             break;  //break out of the loop since LCM has been found 
         } 
        //we come to the next line if current value of i is not the LCM 
-        i += max;   //values of i are: max, 2*max, 3*max, ..., all of which are possible values of LCM 
+        i += 1;   //values of i are: max, 2*max, 3*max, ..., all of which are possible values of LCM 
     } 
  
     printf("\nLCM of %d and %d = %d\n", n1, n2, lcm); 
