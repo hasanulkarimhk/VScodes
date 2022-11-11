@@ -7,7 +7,7 @@ void main()
     printf("Enter any two numbers to find LCM: "); 
     scanf("%d %d", &n1, &n2); 
  
-    i = max = (n1>n2) ? n1 : n2;  //compute the max of n1 and n2;  this is the lowest possible value of LCM 
+    i = max = (n1>n2) ? n1 : n2; //compute the max of n1 and n2;  this is the lowest possible value of LCM 
     while(1)  //while condition is always true (1) 
     { 
         if(i%n1==0 && i%n2==0)        // If i is a multiple of both n1 and n2 then i is the LCM of n1 and n2 
