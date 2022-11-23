@@ -1,0 +1,25 @@
+#include<stdio.h>
+void main() {
+
+    int i=1,num,sum=0,dig;
+    while(i<=500)
+    {
+      num=i;
+      sum=0;
+
+      while(num>0)
+      {
+          dig=num%10;
+          sum=sum+(dig*dig*dig);
+          num=num/10;
+      }
+          if(i==sum)
+          {
+              printf("armstrong number= %d\n",i);
+          }
+
+        i++;
+    }
+
+}
+
