@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+//creating variable student of type struct
+struct student{
+	char name[50];
+	int id;
+	float CGPA;
+}s[5];
+
+int main()
+{
+	printf("Enter information of students please :\n");
+
+	int i;
+	//using for loop for iteration
+	//asking user to input data
+	for(i =0; i<2; i++)
+	{
+		printf("Enter name of student%d :",i+1);
+		scanf("%s", s[i].name);
+		printf("Enter Id: ");
+		scanf("%d", &s[i].id);
+		printf("Enter CGPA :");
+		scanf("%f",&s[i].CGPA);
+		printf("\n");
+	}
+
+	i =0;
+	//if student2 have higher cgpa
+	if(s[i].CGPA < s[i+1].CGPA)
+	{
+	    printf("Student who have higher CGPA is as follow :\n");
+		printf("Name of student :");
+		puts(s[i+1].name);
+		printf("ID of student :%d", s[i+1].id);
+		printf("\n");
+	}
+	//if student1 have higher cgpa
+	else if(s[i].CGPA > s[i+1].CGPA)
+	{
+	    printf("Student who have higher CGPA is as follow :\n");
+		printf("Name of student :");
+		puts(s[i].name);
+		printf("ID of student :%d", s[i].id);
+		printf("\n");
+	}
+	//if both have same cgpa
+	else
+    {
+        printf("Both have same marks.");
+    }
+    return 0;
+}
