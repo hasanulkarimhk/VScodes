@@ -1,0 +1,796 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#include<time.h>
+#define MAX_NUM 20
+
+int main(int price){
+
+
+
+    int teamnum, tprice, sizenum, qtynum, jerseydesignnum, qualitynum,pnum;
+    char teamjersey[MAX_NUM];
+    char jerseyquality[MAX_NUM];
+    char jerseydesigntype[MAX_NUM];
+    char jerseysize[MAX_NUM];
+    char str[100];
+    char str2[100];
+    char str3[100];
+    printf("Enter your name: ");
+    scanf("%s", str);
+    printf("Enter Phone Number's last 4 digit: ");
+    scanf("%d", &pnum);
+    sprintf(str2,"%s%d", str, pnum);
+
+    printf("Select a team:\n");
+    printf("1. Liverpool FC\n");
+    printf("2. FC Barcelona\n");
+    printf("3. Real Madrid CF\n");
+    printf("4. Bayern Munich\n");
+    printf("5. Manchester United\n");
+    printf("6. Paris Saint-Germain\n");
+    printf("7. Juventus\n");
+    printf("8. Arsenal\n");
+    printf("9. AC Milan\n");
+    printf("10. Chelsea\n");
+    printf("11. Manchester City\n");
+    printf("12. Borussia Dortmund\n");
+
+    scanf("%d", &teamnum);
+    switch (teamnum){
+
+        case 1:
+            printf("Team Selected: Liverpool FC\n");
+            strcpy(teamjersey, "Liverpool FC.");
+            break;
+        case 2:
+            printf("Team Selected: FC Barcelona\n");
+            strcpy(teamjersey, "FC Barcelona.");
+            break;
+        case 3:
+            printf("Team Selected: Real Madrid CF\n");
+            strcpy(teamjersey, "Real Madrid CF.");
+            break;
+        case 4:
+            printf("Team Selected: Bayern Munich\n");
+            strcpy(teamjersey, "Bayern Munich.");
+            break;
+        case 5:
+            printf("Team Selected: Manchester United\n");
+            strcpy(teamjersey, "Manchester United.");
+            break;
+        case 6:
+            printf("Team Selected: Paris Saint-Germain\n");
+            strcpy(teamjersey, "Paris Saint-Germain.");
+            break;
+        case 7:
+            printf("Team Selected: Juventus\n");
+            strcpy(teamjersey, "Juventus.");
+            break;
+        case 8:
+            printf("Team Selected: Arsenal\n");
+            strcpy(teamjersey, "Arsenal.");
+            break;
+        case 9:
+            printf("Team Selected: AC Milan\n");
+            strcpy(teamjersey, "AC Milan.");
+            break;
+        case 10:
+            printf("Team Selected: Chelsea\n");
+            strcpy(teamjersey, "Chelsea.");
+            break;
+        case 11:
+            printf("Team Selected: Manchester City\n");
+            strcpy(teamjersey, "Manchester City.");
+            break;
+        case 12:
+            printf("Team Selected: Borussia Dortmund\n");
+            strcpy(teamjersey, "Borussia Dortmund.");
+            break;
+
+        default:
+            printf("Invalid selection\n");
+    }
+
+
+
+    printf("\nSelect Jersey Quality: \n1.Fan Version \n2.Player Version\n");
+    scanf("%d", &qualitynum);
+    if(qualitynum==1){
+
+        price= 950;
+        printf("Quality Selected: Fan Version. \n\n");
+        strcpy(jerseyquality, "Fan Version");
+        printf("Jersey Design Type: \n1. Home Jersey. \n2. Away Jersey. \n3. Concept Jersey.\n");
+        scanf("%d", &jerseydesignnum);
+        if(jerseydesignnum==1){
+
+                strcpy(jerseydesigntype, "Home Jersey");
+                printf("Jersey Design: Home.\n\n");
+                printf("Select a size:\n1. XS (Extra Small)\n2. S (Small)\n3. M (Medium)\n4. L (Large) \n5. XL (Extra Large)\n6. XXL (Extra Extra Large)\n\n");
+                scanf("%d", &sizenum);
+                if(sizenum==1){
+
+                    printf("Size: Extra Small");
+                    strcpy(jerseysize, "Extra Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==2){
+
+                    printf("Size: Small");
+                    strcpy(jerseysize, "Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==3){
+
+                    printf("Size: Medium");
+                    strcpy(jerseysize, "Medium.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==4){
+
+                    printf("Size: Large");
+                    strcpy(jerseysize, "Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==5){
+
+                    printf("Size: Extra Large");
+                    strcpy(jerseysize, "Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==6){
+
+                    printf("Size: Extra Extra Large");
+                    strcpy(jerseysize, "Extra Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else
+                    printf("Invalid!");
+        }
+        else if(jerseydesignnum==2){
+
+                strcpy(jerseydesigntype, "Away Jersey");
+                printf("Jersey Design: Away.\n\n");
+                printf("Select a size:\n1. XS (Extra Small)\n2. S (Small)\n3. M (Medium)\n4. L (Large) \n5. XL (Extra Large)\n6. XXL (Extra Extra Large)\n\n");
+                scanf("%d", &sizenum);
+                if(sizenum==1){
+
+                    printf("Size: Extra Small");
+                    strcpy(jerseysize, "Extra Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==2){
+
+                    printf("Size: Small");
+                    strcpy(jerseysize, "Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==3){
+
+                    printf("Size: Medium");
+                    strcpy(jerseysize, "Medium.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==4){
+
+                    printf("Size: Large");
+                    strcpy(jerseysize, "Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==5){
+
+                    printf("Size: Extra Large");
+                    strcpy(jerseysize, "Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==6){
+
+                    printf("Size: Extra Extra Large");
+                    strcpy(jerseysize, "Extra Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else
+                    printf("Invalid!");
+        }
+        else if(jerseydesignnum==3){
+
+                strcpy(jerseydesigntype, "Concept Jersey");
+                printf("Jersey Design: Concept.\n\n");
+                printf("Select a size:\n1. XS (Extra Small)\n2. S (Small)\n3. M (Medium)\n4. L (Large) \n5. XL (Extra Large)\n6. XXL (Extra Extra Large)\n\n");
+                scanf("%d", &sizenum);
+                if(sizenum==1){
+
+                    printf("Size: Extra Small");
+                    strcpy(jerseysize, "Extra Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==2){
+
+                    printf("Size: Small");
+                    strcpy(jerseysize, "Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==3){
+
+                    printf("Size: Medium");
+                    strcpy(jerseysize, "Medium.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==4){
+
+                    printf("Size: Large");
+                    strcpy(jerseysize, "Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==5){
+
+                    printf("Size: Extra Large");
+                    strcpy(jerseysize, "Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==6){
+
+                    printf("Size: Extra Extra Large");
+                    strcpy(jerseysize, "Extra Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else
+                    printf("Invalid!");
+        }
+        else
+            printf("Invalid!");
+
+    }
+    else if(qualitynum==2){
+
+        price= 1050;
+        printf("Quality Selected: Player Version. \n\n");
+        strcpy(jerseyquality, "Player Version");
+        printf("Jersey Design Type: \n1. Home Jersey. \n2. Away Jersey. \n3. Concept Jersey.\n");
+        scanf("%d", &jerseydesignnum);
+        if(jerseydesignnum==1){
+
+                strcpy(jerseydesigntype, "Home Jersey");
+                printf("Jersey Design: Home.\n\n");
+                printf("Select a size:\n1. XS (Extra Small)\n2. S (Small)\n3. M (Medium)\n4. L (Large) \n5. XL (Extra Large)\n6. XXL (Extra Extra Large)\n\n");
+                scanf("%d", &sizenum);
+                if(sizenum==1){
+
+                    printf("Size: Extra Small");
+                    strcpy(jerseysize, "Extra Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==2){
+
+                    printf("Size: Small");
+                    strcpy(jerseysize, "Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==3){
+
+                    printf("Size: Medium");
+                    strcpy(jerseysize, "Medium.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==4){
+
+                    printf("Size: Large");
+                    strcpy(jerseysize, "Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==5){
+
+                    printf("Size: Extra Large");
+                    strcpy(jerseysize, "Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==6){
+
+                    printf("Size: Extra Extra Large");
+                    strcpy(jerseysize, "Extra Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else
+                    printf("Invalid!");
+        }
+        else if(jerseydesignnum==2){
+
+                strcpy(jerseydesigntype, "Away Jersey");
+                printf("Jersey Design: Away.\n\n");
+                printf("Select a size:\n1. XS (Extra Small)\n2. S (Small)\n3. M (Medium)\n4. L (Large) \n5. XL (Extra Large)\n6. XXL (Extra Extra Large)\n\n");
+                scanf("%d", &sizenum);
+                if(sizenum==1){
+
+                    printf("Size: Extra Small");
+                    strcpy(jerseysize, "Extra Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==2){
+
+                    printf("Size: Small");
+                    strcpy(jerseysize, "Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==3){
+
+                    printf("Size: Medium");
+                    strcpy(jerseysize, "Medium.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==4){
+
+                    printf("Size: Large");
+                    strcpy(jerseysize, "Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+                    }
+                }
+                else if(sizenum==5){
+
+                    printf("Size: Extra Large");
+                    strcpy(jerseysize, "Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+
+                    }
+                }
+                else if(sizenum==6){
+
+                    printf("Size: Extra Extra Large");
+                    strcpy(jerseysize, "Extra Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+
+                    }
+                }
+                else
+                    printf("Invalid!");
+        }
+        else if(jerseydesignnum==3){
+
+                strcpy(jerseydesigntype, "Concept Jersey");
+                printf("Jersey Design: Concept.\n\n");
+                printf("Select a size:\n1. XS (Extra Small)\n2. S (Small)\n3. M (Medium)\n4. L (Large) \n5. XL (Extra Large)\n6. XXL (Extra Extra Large)\n\n");
+                scanf("%d", &sizenum);
+                if(sizenum==1){
+
+                    printf("Size: Extra Small");
+                    strcpy(jerseysize, "Extra Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+
+                    }
+                }
+                else if(sizenum==2){
+
+                    printf("Size: Small");
+                    strcpy(jerseysize, "Small.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==3){
+
+                    printf("Size: Medium");
+                    strcpy(jerseysize, "Medium.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+
+                    }
+                }
+                else if(sizenum==4){
+
+                    printf("Size: Large");
+                    strcpy(jerseysize, "Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+                    }
+                }
+                else if(sizenum==5){
+
+                    printf("Size: Extra Large");
+                    strcpy(jerseysize, "Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+
+                    }
+                }
+                else if(sizenum==6){
+
+                    printf("Size: Extra Extra Large");
+                    strcpy(jerseysize, "Extra Extra Large.");
+                    printf("\n\nEnter The Quantity: ");
+                    scanf("%d", &qtynum);
+                    if(qtynum>0){
+
+                        time_t current_time = time(NULL);
+                        struct tm *local_time = localtime(&current_time);
+                        tprice= qtynum*price;
+                        printf("=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+                        sprintf(str3,"=======Details of  The Order=======\nUnique Code: %s \nTeam Name: %s \nJersey Quality: %s \nJersey Design: %s \nJersey Size: %s \nQuantity: %d \nTotal Price: %d TAKA \nOrder Time: %d/%d/%d %02d:%02d\n\n", str2, teamjersey,jerseyquality, jerseydesigntype, jerseysize, qtynum, tprice, local_time->tm_mon + 1, local_time->tm_mday, local_time->tm_year + 1900, local_time->tm_hour, local_time->tm_min);
+
+
+
+                    }
+                }
+                else
+                    printf("Invalid!");
+        }
+        else
+            printf("Invalid!");
+
+    }
+    else
+        printf("Invalid!");
+
+FILE *data_geeks;
+data_geeks = fopen("jersey_geeks.txt", "a");
+if(data_geeks== NULL)
+    printf("\nNo Files");
+else
+    printf("\nFile created");
+    fputs(str3, data_geeks);
+    fclose(data_geeks);
+
+getch();
+}
+
+
