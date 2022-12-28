@@ -16,9 +16,9 @@ int main(int price){
     char str[100];
     char str2[100];
     char str3[100];
-    printf("Enter your name: ");
+    printf("Enter Customer's First Name: ");
     scanf("%s", str);
-    printf("Enter Phone Number's last 4 digit: ");
+    printf("Enter Phone Number: ");
     scanf("%d", &pnum);
     sprintf(str2,"%s%d", str, pnum);
 
@@ -784,9 +784,9 @@ int main(int price){
 FILE *data_geeks;
 data_geeks = fopen("jersey_geeks.txt", "a");
 if(data_geeks== NULL)
-    printf("\nNo Files");
+    printf("\nError!");
 else
-    printf("\nFile created");
+    printf("\nDATA ADDED");
     fputs(str3, data_geeks);
     fclose(data_geeks);
 
